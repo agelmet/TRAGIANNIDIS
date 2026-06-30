@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Καθηγητής Αθανάσιος Τραγιαννίδης, MD, PhD, FECMM | Παιδιατρική Αιματολογία - Ογκολογία</title>
+<meta name="description" content="Καθηγητής Παιδιατρικής Αιματολογίας-Ογκολογίας ΑΠΘ. Διάγνωση και θεραπεία αιματολογικών νοσημάτων και κακοηθειών σε παιδιά και εφήβους. Άχεπα, Θεσσαλονίκη.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a2540;
+  --navy-deep:#061829;
+  --blue:#1d6fb8;
+  --blue-light:#3a8dd6;
+  --teal:#16a3a3;
+  --gold:#e0a528;
+  --gold-soft:#f0c869;
+  --paper:#f7f9fc;
+  --paper-2:#eef3f9;
+  --white:#ffffff;
+  --ink:#1a2b3c;
+  --muted:#5d7186;
+  --line:rgba(10,37,64,.10);
+  --shadow:0 24px 70px -25px rgba(10,37,64,.32);
+  --shadow-sm:0 12px 36px -16px rgba(10,37,64,.28);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Manrope',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--paper);
+  line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+body.no-scroll{overflow:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.lang-en{display:none}
+body.en .lang-el{display:none}
+body.en .lang-en{display:inline}
+body.en .lang-en.block{display:block}
+
+/* ===== Loader ===== */
+#loader{
+  position:fixed;inset:0;z-index:9999;background:var(--navy-deep);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:26px;
+  transition:opacity .8s ease,visibility .8s ease;
+}
+#loader.done{opacity:0;visibility:hidden}
+.loader-mark{width:74px;height:74px;position:relative}
+.loader-mark svg{width:100%;height:100%;animation:spin 2.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-mark .pulse{
+  position:absolute;inset:0;border-radius:50%;
+  border:2px solid var(--gold);opacity:.4;animation:pulse 1.8s ease-out infinite;
+}
+@keyframes pulse{0%{transform:scale(.7);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+.loader-txt{font-family:var(--serif);color:#cfe2f5;font-size:1.1rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+
+/* ===== Nav ===== */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  padding:20px 0;transition:all .45s cubic-bezier(.4,0,.2,1);
+}
+header.scrolled{
+  background:rgba(247,249,252,.86);backdrop-filter:blur(18px);
+  padding:12px 0;box-shadow:0 10px 40px -20px rgba(10,37,64,.3);
+}
+.nav-wrap{max-width:1280px;margin:0 auto;padding:0 30px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px;cursor:pointer}
+.brand-logo{
+  width:52px;height:52px;border-radius:14px;overflow:hidden;flex-shrink:0;
+  background:var(--white);box-shadow:0 8px 24px -10px rgba(10,37,64,.4);
+  display:flex;align-items:center;justify-content:center;transition:transform .4s;
+}
+.brand:hover .brand-logo{transform:scale(1.06) rotate(-3deg)}
+.brand-logo img{width:100%;height:100%;object-fit:cover}
+.brand-txt{line-height:1.15;transition:color .4s}
+.brand-name{font-family:var(--serif);font-weight:700;font-size:1.18rem;color:var(--navy)}
+header:not(.scrolled) .brand-name{color:var(--white)}
+header:not(.scrolled).hero-dark .brand-name{color:var(--white)}
+.brand-sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header:not(.scrolled) .brand-sub{color:rgba(255,255,255,.72)}
+
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none}
+.nav-links a{
+  font-size:.83rem;font-weight:600;letter-spacing:.02em;color:var(--ink);
+  position:relative;padding:4px 0;transition:color .3s;text-transform:uppercase;
+}
+header:not(.scrolled) .nav-links a{color:rgba(255,255,255,.86)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;
+  background:var(--gold);transition:width .35s ease;
+}
+.nav-links a:hover::after{width:100%}
+.nav-links a:hover{color:var(--gold)}
+header:not(.scrolled) .nav-links a:hover{color:var(--gold-soft)}
+
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang-switch{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:4px}
+header.scrolled .lang-switch{background:var(--paper-2);border-color:var(--line)}
+.lang-btn{
+  width:34px;height:26px;border-radius:20px;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+  background:transparent;transition:all .3s;opacity:.55;
+}
+.lang-btn.active{opacity:1;background:var(--white);box-shadow:0 4px 12px -4px rgba(0,0,0,.3)}
+.lang-btn svg{width:22px;height:15px;border-radius:2px;display:block}
+
+.nav-cta{
+  background:var(--gold);color:var(--navy);padding:11px 22px;border-radius:30px;
+  font-size:.8rem;font-weight:700;letter-spacing:.02em;transition:all .35s;
+  box-shadow:0 10px 26px -10px rgba(224,165,40,.6);white-space:nowrap;
+}
+.nav-cta:hover{transform:translateY(-2px);background:var(--gold-soft);box-shadow:0 16px 34px -10px rgba(224,165,40,.7)}
+
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;width:30px;height:24px;justify-content:center;z-index:1100}
+.burger span{width:100%;height:2px;background:var(--ink);transition:all .35s;border-radius:2px}
+header:not(.scrolled) .burger span{background:var(--white)}
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed;inset:0;z-index:1050;background:var(--navy-deep);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;
+}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-close{
+  position:absolute;top:26px;right:26px;width:46px;height:46px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;
+}
+.mobile-close:hover{background:rgba(255,255,255,.14);transform:rotate(90deg)}
+.mobile-close::before,.mobile-close::after{
+  content:'';position:absolute;width:20px;height:2px;background:#fff;border-radius:2px;
+}
+.mobile-close::before{transform:rotate(45deg)}
+.mobile-close::after{transform:rotate(-45deg)}
+.mobile-menu a{
+  font-family:var(--serif);font-size:2rem;font-weight:600;color:#fff;padding:8px 0;
+  opacity:0;transform:translateY(20px);transition:all .5s;
+}
+.mobile-menu.open a{opacity:1;transform:translateY(0)}
+.mobile-menu.open a:nth-child(2){transition-delay:.1s}
+.mobile-menu.open a:nth-child(3){transition-delay:.16s}
+.mobile-menu.open a:nth-child(4){transition-delay:.22s}
+.mobile-menu.open a:nth-child(5){transition-delay:.28s}
+.mobile-menu.open a:nth-child(6){transition-delay:.34s}
+.mobile-menu.open a:nth-child(7){transition-delay:.4s}
+.mobile-lang{display:flex;gap:14px;margin-top:30px;opacity:0;transition:opacity .5s .46s}
+.mobile-menu.open .mobile-lang{opacity:1}
+.mobile-lang button{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:30px;
+  padding:8px 16px;color:#fff;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.85rem;font-weight:600;transition:all .3s;
+}
+.mobile-lang button.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  overflow:hidden;background:var(--navy-deep);
+}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.32;transform:scale(1.1);animation:slowZoom 20s ease-out forwards}
+@keyframes slowZoom{to{transform:scale(1)}}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(6,24,41,.96) 0%,rgba(10,37,64,.86) 45%,rgba(29,111,184,.5) 100%);
+}
+.hero-glow{position:absolute;border-radius:50%;filter:blur(90px);z-index:1;opacity:.5}
+.hero-glow.g1{width:420px;height:420px;background:var(--blue);top:-100px;right:-60px;animation:float1 14s ease-in-out infinite}
+.hero-glow.g2{width:380px;height:380px;background:var(--teal);bottom:-120px;left:-80px;animation:float2 16s ease-in-out infinite}
+@keyframes float1{50%{transform:translate(-40px,40px)}}
+@keyframes float2{50%{transform:translate(40px,-30px)}}
+
+.hero-inner{position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:120px 30px 70px;width:100%}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:30px;
+  background:rgba(224,165,40,.14);border:1px solid rgba(224,165,40,.35);
+  color:var(--gold-soft);font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:26px;opacity:0;transform:translateY(24px);animation:rise .9s .3s forwards;
+}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.4}}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(2.6rem,5.6vw,4.7rem);line-height:1.04;
+  font-weight:700;color:#fff;letter-spacing:-.01em;margin-bottom:8px;
+}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:block;opacity:0;transform:translateY(110%);animation:reveal 1s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1 .line:nth-child(1) span{animation-delay:.4s}
+.hero h1 .line:nth-child(2) span{animation-delay:.55s}
+.hero h1 .line:nth-child(2) span{color:var(--gold-soft)}
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+.hero-role{
+  font-size:1.08rem;color:rgba(255,255,255,.82);font-weight:500;max-width:520px;margin:24px 0 34px;
+  opacity:0;transform:translateY(24px);animation:rise .9s .75s forwards;
+}
+.hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(24px);animation:rise .9s .9s forwards}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:34px;
+  font-weight:700;font-size:.92rem;letter-spacing:.01em;cursor:pointer;transition:all .4s;border:none;
+}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 16px 40px -14px rgba(224,165,40,.6)}
+.btn-gold:hover{transform:translateY(-3px);background:var(--gold-soft);box-shadow:0 22px 50px -14px rgba(224,165,40,.7)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.28)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.btn svg{width:18px;height:18px}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+.hero-card{
+  position:relative;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);
+  opacity:0;transform:translateY(40px) scale(.96);animation:rise 1.1s 1s forwards;
+}
+.hero-card img{width:100%;height:540px;object-fit:cover;cursor:zoom-in;transition:transform .8s}
+.hero-card:hover img{transform:scale(1.05)}
+.hero-card-badge{
+  position:absolute;bottom:0;left:0;right:0;padding:50px 26px 24px;
+  background:linear-gradient(transparent,rgba(6,24,41,.92));color:#fff;
+}
+.hero-card-badge .t{font-family:var(--serif);font-size:1.5rem;font-weight:600}
+.hero-card-badge .s{font-size:.8rem;color:rgba(255,255,255,.75);letter-spacing:.04em}
+
+.hero-stats{display:flex;gap:30px;margin-top:48px;flex-wrap:wrap;opacity:0;transform:translateY(24px);animation:rise .9s 1.1s forwards}
+.hero-stat .n{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--gold-soft);line-height:1}
+.hero-stat .l{font-size:.76rem;color:rgba(255,255,255,.7);letter-spacing:.04em;margin-top:4px}
+
+.scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:rise 1s 1.6s forwards}
+.scroll-ind .mouse{width:24px;height:38px;border:2px solid rgba(255,255,255,.4);border-radius:14px;position:relative}
+.scroll-ind .mouse::before{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:4px;height:7px;background:var(--gold);border-radius:3px;animation:scrollDot 1.8s ease-in-out infinite}
+@keyframes scrollDot{50%{transform:translate(-50%,12px);opacity:.3}}
+.scroll-ind span{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* ===== Sections ===== */
+section{position:relative}
+.container{max-width:1180px;margin:0 auto;padding:0 30px}
+.sec-pad{padding:110px 0}
+.sec-head{text-align:center;max-width:720px;margin:0 auto 64px}
+.sec-tag{
+  display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:16px;position:relative;padding-left:34px;
+}
+.sec-tag::before{content:'';position:absolute;left:0;top:50%;width:24px;height:2px;background:var(--gold)}
+.sec-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.1rem);font-weight:700;line-height:1.1;color:var(--navy);letter-spacing:-.01em}
+.sec-title em{color:var(--blue);font-style:italic}
+.sec-sub{font-size:1.05rem;color:var(--muted);margin-top:18px}
+
+.reveal{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.12s}
+.reveal.d2{transition-delay:.24s}
+.reveal.d3{transition-delay:.36s}
+.reveal-l{opacity:0;transform:translateX(-60px);transition:all 1.1s cubic-bezier(.22,1,.36,1)}
+.reveal-l.in{opacity:1;transform:translateX(0)}
+.reveal-r{opacity:0;transform:translateX(60px);transition:all 1.1s cubic-bezier(.22,1,.36,1)}
+.reveal-r.in{opacity:1;transform:translateX(0)}
+
+/* ===== About ===== */
+.about{background:var(--white);overflow:hidden}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-imgs{position:relative}
+.about-img-main{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.about-img-main img{width:100%;height:560px;object-fit:cover;cursor:zoom-in;transition:transform .8s}
+.about-img-main:hover img{transform:scale(1.04)}
+.about-img-float{
+  position:absolute;bottom:-34px;right:-24px;width:210px;border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(10,37,64,.4);border:5px solid #fff;
+}
+.about-img-float img{width:100%;height:240px;object-fit:cover;cursor:zoom-in;transition:transform .8s}
+.about-img-float:hover img{transform:scale(1.08)}
+.about-credential{
+  position:absolute;top:-26px;left:-22px;background:var(--navy);color:#fff;
+  padding:18px 24px;border-radius:16px;box-shadow:var(--shadow-sm);
+}
+.about-credential .n{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold-soft);line-height:1}
+.about-credential .l{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;opacity:.82;margin-top:2px}
+
+.about-body h2{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:700;color:var(--navy);line-height:1.14;margin-bottom:22px}
+.about-body p{color:var(--muted);margin-bottom:18px;font-size:1.02rem}
+.about-body p strong{color:var(--ink);font-weight:600}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.about-hl{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--paper);border:1px solid var(--line);transition:all .35s}
+.about-hl:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:transparent}
+.about-hl .ic{width:38px;height:38px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center}
+.about-hl .ic svg{width:20px;height:20px;stroke:#fff}
+.about-hl .t{font-weight:700;font-size:.9rem;color:var(--navy);line-height:1.2}
+.about-hl .d{font-size:.78rem;color:var(--muted)}
+
+/* ===== Marquee credentials ===== */
+.cred-strip{background:var(--navy);padding:26px 0;overflow:hidden;position:relative}
+.cred-strip::before,.cred-strip::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2}
+.cred-strip::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
+.cred-strip::after{right:0;background:linear-gradient(-90deg,var(--navy),transparent)}
+.cred-track{display:flex;gap:60px;width:max-content;animation:marquee 32s linear infinite}
+.cred-track:hover{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.cred-item{display:flex;align-items:center;gap:14px;color:rgba(255,255,255,.85);font-family:var(--serif);font-size:1.3rem;font-weight:500;white-space:nowrap}
+.cred-item .star{color:var(--gold);font-size:1rem}
+
+/* ===== Services ===== */
+.services{background:var(--paper)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc-card{
+  background:var(--white);border-radius:22px;padding:38px 32px;position:relative;overflow:hidden;
+  border:1px solid var(--line);transition:all .5s cubic-bezier(.22,1,.36,1);cursor:default;
+}
+.svc-card::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--teal),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:transform .5s;
+}
+.svc-card:hover{transform:translateY(-10px);box-shadow:var(--shadow);border-color:transparent}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-ic{
+  width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+  background:linear-gradient(135deg,rgba(29,111,184,.12),rgba(22,163,163,.12));transition:all .5s;
+}
+.svc-card:hover .svc-ic{background:linear-gradient(135deg,var(--blue),var(--teal));transform:rotate(-6deg) scale(1.05)}
+.svc-ic svg{width:32px;height:32px;stroke:var(--blue);transition:stroke .5s}
+.svc-card:hover .svc-ic svg{stroke:#fff}
+.svc-card h3{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.2}
+.svc-list{list-style:none}
+.svc-list li{position:relative;padding-left:26px;margin-bottom:12px;font-size:.92rem;color:var(--muted)}
+.svc-list li::before{
+  content:'';position:absolute;left:0;top:8px;width:14px;height:14px;border-radius:50%;
+  background:rgba(22,163,163,.15);border:2px solid var(--teal);
+}
+.svc-list li::after{content:'';position:absolute;left:5px;top:11px;width:4px;height:4px;border-radius:50%;background:var(--teal)}
+
+/* ===== Philosophy ===== */
+.philo{background:linear-gradient(160deg,var(--navy-deep),var(--navy) 60%,#0d3358);color:#fff;position:relative;overflow:hidden}
+.philo::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,111,184,.25),transparent 70%);top:-200px;right:-150px}
+.philo::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(22,163,163,.2),transparent 70%);bottom:-180px;left:-120px}
+.philo .container{position:relative;z-index:2}
+.philo .sec-tag{color:var(--gold-soft)}
+.philo .sec-tag::before{background:var(--gold)}
+.philo .sec-title{color:#fff}
+.philo .sec-title em{color:var(--gold-soft)}
+.philo-intro{text-align:center;max-width:760px;margin:0 auto 64px;font-size:1.12rem;color:rgba(255,255,255,.82)}
+.philo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.philo-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:36px 30px;
+  backdrop-filter:blur(10px);transition:all .5s;
+}
+.philo-card:hover{background:rgba(255,255,255,.08);transform:translateY(-8px);border-color:rgba(224,165,40,.3)}
+.philo-num{font-family:var(--serif);font-size:3rem;font-weight:700;color:rgba(224,165,40,.35);line-height:1;margin-bottom:12px}
+.philo-card h3{font-family:var(--serif);font-size:1.45rem;font-weight:600;margin-bottom:14px;color:var(--gold-soft)}
+.philo-card p{font-size:.94rem;color:rgba(255,255,255,.78)}
+
+/* ===== Seminars / talks ===== */
+.talks{background:var(--white)}
+.talks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+.talk-img{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);height:300px;cursor:zoom-in}
+.talk-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.talk-img:hover img{transform:scale(1.08)}
+.talk-img::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(6,24,41,.7));opacity:0;transition:opacity .5s}
+.talk-img:hover::after{opacity:1}
+.talk-cap{position:absolute;bottom:18px;left:20px;right:20px;color:#fff;font-family:var(--serif);font-size:1.15rem;font-weight:600;opacity:0;transform:translateY(12px);transition:all .5s;z-index:2}
+.talk-img:hover .talk-cap{opacity:1;transform:translateY(0)}
+
+/* ===== Space gallery ===== */
+.space{background:var(--paper-2)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
+.gal-item{border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--shadow-sm);cursor:zoom-in}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gal-item:hover img{transform:scale(1.1)}
+.gal-item::after{content:'';position:absolute;inset:0;background:rgba(29,111,184,0);transition:background .4s}
+.gal-item:hover::after{background:rgba(29,111,184,.12)}
+.gal-item .zoom{
+  position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.7);transition:all .4s;z-index:2;
+}
+.gal-item:hover .zoom{opacity:1;transform:scale(1)}
+.gal-item .zoom svg{width:18px;height:18px;stroke:var(--navy)}
+.gal-item.big{grid-column:span 2;grid-row:span 2}
+.gal-item.wide{grid-column:span 2}
+.gal-item.tall{grid-row:span 2}
+
+/* ===== Articles ===== */
+.articles{background:var(--white)}
+.art-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.art-card{
+  display:flex;gap:22px;background:var(--paper);border-radius:20px;padding:26px;border:1px solid var(--line);
+  transition:all .5s;align-items:center;
+}
+.art-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;background:#fff}
+.art-icon{
+  width:70px;height:88px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg,var(--blue),var(--navy));position:relative;box-shadow:0 14px 30px -14px rgba(29,111,184,.6);
+}
+.art-icon svg{width:34px;height:34px;stroke:#fff}
+.art-icon .ext{position:absolute;bottom:8px;font-size:.56rem;letter-spacing:.1em;color:rgba(255,255,255,.8);font-weight:700;text-transform:uppercase}
+.art-body{flex:1}
+.art-body .cat{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:6px}
+.art-body h3{font-family:var(--serif);font-size:1.32rem;font-weight:700;color:var(--navy);line-height:1.22;margin-bottom:8px}
+.art-body p{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.art-link{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:700;color:var(--blue);transition:gap .3s}
+.art-card:hover .art-link{gap:12px}
+.art-link svg{width:15px;height:15px}
+
+/* ===== Reviews ===== */
+.reviews{background:linear-gradient(160deg,var(--paper),var(--paper-2));overflow:hidden}
+.rev-top{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
+.rev-stars-big{display:flex;gap:4px}
+.rev-stars-big svg{width:26px;height:26px;fill:var(--gold)}
+.rev-google{display:inline-flex;align-items:center;gap:10px;background:#fff;padding:10px 20px;border-radius:30px;box-shadow:var(--shadow-sm);font-weight:600;font-size:.9rem;color:var(--ink);margin:18px auto 0}
+.rev-google svg{width:20px;height:20px}
+.rev-masonry{columns:3;column-gap:24px;margin-top:20px}
+.rev-card{
+  break-inside:avoid;background:#fff;border-radius:18px;padding:28px;margin-bottom:24px;
+  box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative;transition:all .5s;
+}
+.rev-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.rev-quote{position:absolute;top:18px;right:22px;font-family:var(--serif);font-size:3.4rem;color:rgba(29,111,184,.12);line-height:1}
+.rev-stars{display:flex;gap:3px;margin-bottom:14px}
+.rev-stars svg{width:16px;height:16px;fill:var(--gold)}
+.rev-text{font-size:.95rem;color:var(--ink);line-height:1.65;margin-bottom:18px;position:relative;z-index:2}
+.rev-author{display:flex;align-items:center;gap:12px}
+.rev-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:var(--serif);font-size:1.1rem;flex-shrink:0}
+.rev-name{font-weight:700;font-size:.9rem;color:var(--navy)}
+.rev-role{font-size:.74rem;color:var(--muted)}
+.rev-more{text-align:center;margin-top:30px}
+
+/* ===== Contact ===== */
+.contact{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(29,111,184,.22),transparent 70%);top:-150px;left:-100px}
+.contact .container{position:relative;z-index:2}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch}
+.contact .sec-tag{color:var(--gold-soft)}
+.contact .sec-tag::before{background:var(--gold)}
+.contact h2{font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.9rem);font-weight:700;line-height:1.12;margin-bottom:20px}
+.contact h2 em{color:var(--gold-soft);font-style:italic}
+.contact-lead{color:rgba(255,255,255,.78);font-size:1.05rem;margin-bottom:36px;max-width:460px}
+.contact-info{display:flex;flex-direction:column;gap:18px}
+.ci-item{display:flex;gap:16px;align-items:flex-start;padding:18px 22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;transition:all .4s}
+.ci-item:hover{background:rgba(255,255,255,.09);transform:translateX(6px)}
+.ci-ic{width:46px;height:46px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center}
+.ci-ic svg{width:22px;height:22px;stroke:#fff}
+.ci-item .lbl{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;margin-bottom:3px}
+.ci-item .val{font-size:.98rem;color:#fff;font-weight:500;word-break:break-word}
+.ci-item a.val:hover{color:var(--gold-soft)}
+.contact-map{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);min-height:480px;border:1px solid rgba(255,255,255,.12)}
+.contact-map iframe{width:100%;height:100%;min-height:480px;border:0;filter:grayscale(.2) contrast(1.05)}
+
+/* ===== Footer ===== */
+footer{background:#040f1c;color:rgba(255,255,255,.6);padding:60px 0 30px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.foot-brand img{width:54px;height:54px;border-radius:14px;object-fit:cover;background:#fff}
+.foot-brand .n{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff}
+.foot-brand .s{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.foot-desc{font-size:.9rem;max-width:340px;line-height:1.7}
+.foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;font-weight:700}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:11px}
+.foot-col a{font-size:.9rem;transition:color .3s}
+.foot-col a:hover{color:var(--gold-soft)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.82rem}
+.foot-bottom a{color:var(--gold-soft);font-weight:600}
+.advon{display:inline-flex;align-items:center;gap:6px}
+.advon .heart{color:var(--blue-light)}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;inset:0;z-index:5000;background:rgba(4,15,28,.95);
+  display:flex;align-items:center;justify-content:center;padding:40px;
+  opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;backdrop-filter:blur(6px);
+}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 40px 100px rgba(0,0,0,.6);transform:scale(.92);transition:transform .4s}
+.lightbox.open img{transform:scale(1)}
+.lb-close{position:absolute;top:26px;right:30px;width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);cursor:pointer;transition:all .3s}
+.lb-close:hover{background:rgba(255,255,255,.18);transform:rotate(90deg)}
+.lb-close::before,.lb-close::after{content:'';position:absolute;top:50%;left:50%;width:22px;height:2px;background:#fff}
+.lb-close::before{transform:translate(-50%,-50%) rotate(45deg)}
+.lb-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.07);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.lb-nav:hover{background:rgba(255,255,255,.16)}
+.lb-nav svg{width:24px;height:24px;stroke:#fff}
+.lb-prev{left:24px}.lb-next{right:24px}
+
+/* Floating contact btn */
+.float-call{
+  position:fixed;bottom:26px;right:26px;z-index:900;display:flex;align-items:center;gap:10px;
+  background:var(--gold);color:var(--navy);padding:14px 22px;border-radius:40px;font-weight:700;font-size:.88rem;
+  box-shadow:0 16px 40px -12px rgba(224,165,40,.7);transition:all .4s;transform:translateY(120px);
+}
+.float-call.show{transform:translateY(0)}
+.float-call:hover{transform:translateY(-4px);background:var(--gold-soft)}
+.float-call svg{width:18px;height:18px}
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-card{max-width:420px}
+  .about-grid{grid-template-columns:1fr;gap:60px}
+  .about-img-float{width:170px}
+  .svc-grid,.philo-grid,.talks-grid{grid-template-columns:1fr 1fr}
+  .art-grid{grid-template-columns:1fr}
+  .rev-masonry{columns:2}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .lang-switch{display:none}
+  .burger{display:flex}
+  .sec-pad{padding:80px 0}
+  .svc-grid,.philo-grid,.talks-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+  .rev-masonry{columns:1}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+  .gal-item.big{grid-column:span 2;grid-row:span 1}
+  .about-highlights{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+  .foot-bottom{flex-direction:column;text-align:center}
+  .about-img-float{width:140px;right:-10px}
+  .float-call span{display:none}
+  .float-call{padding:16px;border-radius:50%}
+}
+@media(max-width:480px){
+  .hero-card img{height:420px}
+  .about-img-main img{height:440px}
+  .gallery{grid-template-columns:1fr}
+  .gal-item.big{grid-column:span 1}
+}
+</style>
+</head>
+<body class="el">
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-mark">
+    <div class="pulse"></div>
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="38" stroke="#1d6fb8" stroke-width="3" stroke-dasharray="60 200" stroke-linecap="round"/>
+      <path d="M50 30 v40 M30 50 h40" stroke="#e0a528" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="loader-txt lang-el">Καθηγητής Τραγιαννίδης</div>
+  <div class="loader-txt lang-en">Prof. Tragiannidis</div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="hero-dark">
+  <div class="nav-wrap">
+    <div class="brand" onclick="scrollTo({top:0,behavior:'smooth'})">
+      <div class="brand-logo">
+        <img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/Gemini_Generated_Image_96qcwx96qcwx96qc-2.png" alt="Logo">
+      </div>
+      <div class="brand-txt">
+        <div class="brand-name lang-el">Καθ. Τραγιαννίδης</div>
+        <div class="brand-name lang-en">Prof. Tragiannidis</div>
+        <div class="brand-sub lang-el">Παιδιατρική Αιματολογία · Ογκολογία</div>
+        <div class="brand-sub lang-en">Pediatric Hematology · Oncology</div>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#about"><span class="lang-el">Προφίλ</span><span class="lang-en">About</span></a></li>
+      <li><a href="#services"><span class="lang-el">Υπηρεσίες</span><span class="lang-en">Services</span></a></li>
+      <li><a href="#philosophy"><span class="lang-el">Φιλοσοφία</span><span class="lang-en">Philosophy</span></a></li>
+      <li><a href="#articles"><span class="lang-el">Άρθρα</span><span class="lang-en">Articles</span></a></li>
+      <li><a href="#reviews"><span class="lang-el">Κριτικές</span><span class="lang-en">Reviews</span></a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="el" title="Ελληνικά">
+          <svg viewBox="0 0 27 18" xmlns="http://www.w3.org/2000/svg"><rect width="27" height="18" fill="#0d5eaf"/><rect y="2" width="27" height="2" fill="#fff"/><rect y="6" width="27" height="2" fill="#fff"/><rect y="10" width="27" height="2" fill="#fff"/><rect y="14" width="27" height="2" fill="#fff"/><rect width="10" height="10" fill="#0d5eaf"/><rect x="4" width="2" height="10" fill="#fff"/><rect y="4" width="10" height="2" fill="#fff"/></svg>
+        </button>
+        <button class="lang-btn" data-lang="en" title="English">
+          <svg viewBox="0 0 27 18" xmlns="http://www.w3.org/2000/svg"><rect width="27" height="18" fill="#012169"/><path d="M0 0l27 18M27 0L0 18" stroke="#fff" stroke-width="3"/><path d="M0 0l27 18M27 0L0 18" stroke="#C8102E" stroke-width="1.5"/><path d="M13.5 0v18M0 9h27" stroke="#fff" stroke-width="5"/><path d="M13.5 0v18M0 9h27" stroke="#C8102E" stroke-width="3"/></svg>
+        </button>
+      </div>
+      <a href="tel:+302310994804" class="nav-cta">
+        <span class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span>
+      </a>
+    </div>
+
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-close" id="mobileClose"></div>
+  <a href="#about" class="m-link"><span class="lang-el">Προφίλ</span><span class="lang-en">About</span></a>
+  <a href="#services" class="m-link"><span class="lang-el">Υπηρεσίες</span><span class="lang-en">Services</span></a>
+  <a href="#philosophy" class="m-link"><span class="lang-el">Φιλοσοφία</span><span class="lang-en">Philosophy</span></a>
+  <a href="#articles" class="m-link"><span class="lang-el">Άρθρα</span><span class="lang-en">Articles</span></a>
+  <a href="#reviews" class="m-link"><span class="lang-el">Κριτικές</span><span class="lang-en">Reviews</span></a>
+  <a href="#contact" class="m-link"><span class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></a>
+  <div class="mobile-lang">
+    <button class="m-lang active" data-lang="el">🇬🇷 Ελληνικά</button>
+    <button class="m-lang" data-lang="en">🇬🇧 English</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-184.jpg" alt="Κλινικός χώρος">
+  </div>
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="dot"></span>
+          <span class="lang-el">Καθηγητής ΑΠΘ · 20+ Χρόνια Εμπειρίας</span>
+          <span class="lang-en">Professor AUTH · 20+ Years of Experience</span>
+        </div>
+        <h1>
+          <span class="line"><span class="lang-el">Αθανάσιος</span><span class="lang-en">Athanasios</span></span>
+          <span class="line"><span class="lang-el">Τραγιαννίδης</span><span class="lang-en">Tragiannidis</span></span>
+        </h1>
+        <p class="hero-role">
+          <span class="lang-el">MD, PhD, FECMM — Τακτικός Καθηγητής Παιδιατρικής & Παιδιατρικής Αιματολογίας-Ογκολογίας στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης. Επιστημονική αριστεία με ανθρώπινο πρόσωπο, δίπλα σε κάθε παιδί και κάθε οικογένεια.</span>
+          <span class="lang-en">MD, PhD, FECMM — Full Professor of Pediatrics & Pediatric Hematology-Oncology at Aristotle University of Thessaloniki. Scientific excellence with a human touch, beside every child and every family.</span>
+        </p>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn btn-gold">
+            <span class="lang-el">Κλείστε Ραντεβού</span><span class="lang-en">Book an Appointment</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#about" class="btn btn-ghost">
+            <span class="lang-el">Το Προφίλ μου</span><span class="lang-en">My Profile</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="n">140+</div><div class="l"><span class="lang-el">Δημοσιεύσεις PubMed</span><span class="lang-en">PubMed Publications</span></div></div>
+          <div class="hero-stat"><div class="n">400+</div><div class="l"><span class="lang-el">Επιστημονικές Εργασίες</span><span class="lang-en">Scientific Papers</span></div></div>
+          <div class="hero-stat"><div class="n">14+</div><div class="l"><span class="lang-el">Επιστημονικές Εταιρείες</span><span class="lang-en">Scientific Societies</span></div></div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-180.jpg" alt="Καθηγητής Αθανάσιος Τραγιαννίδης" class="zoomable">
+        <div class="hero-card-badge">
+          <div class="t lang-el">Καθ. Α. Τραγιαννίδης</div>
+          <div class="t lang-en">Prof. A. Tragiannidis</div>
+          <div class="s lang-el">Παιδίατρος — Αιματολόγος-Ογκολόγος</div>
+          <div class="s lang-en">Pediatrician — Hematologist-Oncologist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <div class="mouse"></div>
+    <span class="lang-el">Κυλήστε</span><span class="lang-en">Scroll</span>
+  </div>
+</section>
+
+<!-- CREDENTIAL STRIP -->
+<div class="cred-strip">
+  <div class="cred-track" id="credTrack"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about sec-pad" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-imgs reveal-l">
+        <div class="about-credential">
+          <div class="n">2025</div>
+          <div class="l lang-el">Τακτικός Καθηγητής</div>
+          <div class="l lang-en">Full Professor</div>
+        </div>
+        <div class="about-img-main">
+          <img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-181.jpg" alt="Καθηγητής Τραγιαννίδης" class="zoomable">
+        </div>
+        <div class="about-img-float">
+          <img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-170.jpg" alt="Επιστημονική ομιλία" class="zoomable">
+        </div>
+      </div>
+
+      <div class="about-body reveal-r">
+        <span class="sec-tag lang-el">Το Προφίλ</span>
+        <span class="sec-tag lang-en">The Profile</span>
+        <h2 class="lang-el">Μια ζωή αφιερωμένη στην υγεία των παιδιών</h2>
+        <h2 class="lang-en">A life devoted to children's health</h2>
+
+        <p class="lang-el">Ο <strong>Αθανάσιος Τραγιαννίδης</strong> είναι Τακτικός Καθηγητής Παιδιατρικής & Παιδιατρικής Αιματολογίας-Ογκολογίας στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης. Με περισσότερα από 20 χρόνια ενεργούς κλινικής εμπειρίας, συγκαταλέγεται στους πλέον καταξιωμένους επιστήμονες του πεδίου του.</p>
+        <p class="lang-el">Έλαβε το πτυχίο Ιατρικής από το Πανεπιστήμιο της Τεργέστης με <strong>άριστα</strong> και ολοκλήρωσε την ειδικότητά του στη Β' Παιδιατρική Κλινική του Νοσοκομείου ΑΧΕΠΑ. Είναι κάτοχος Διδακτορικού Διπλώματος (Άριστα, 2006) από το ΑΠΘ. Μετεκπαιδεύτηκε στην Παιδιατρική Αιματολογική Κλινική του Πανεπιστημίου του Münster στη Γερμανία, ως επισκέπτης Καθηγητής μέσω του Ιδρύματος DAAD.</p>
+        <p class="lang-el">Διατελεί <strong>Πρόεδρος της Παιδιατρικής Εταιρείας Βορείου Ελλάδος</strong> και Αντιπρόεδρος της επιτροπής Παιδιατρικής Αιματολογίας της Ελληνικής Αιματολογικής Εταιρείας, ενώ έχει αποσπάσει πολλαπλά βραβεία, όπως τα «Χωρέμειο» και «Κασίμος».</p>
+
+        <p class="lang-en"><strong>Athanasios Tragiannidis</strong> is a Full Professor of Pediatrics & Pediatric Hematology-Oncology at Aristotle University of Thessaloniki. With more than 20 years of active clinical experience, he ranks among the most distinguished scientists in his field.</p>
+        <p class="lang-en">He received his Medical Degree from the University of Trieste <strong>with honours</strong> and completed his specialty at the 2nd Pediatric Clinic of AHEPA Hospital. He holds a PhD (Excellent, 2006) from AUTH and trained at the Pediatric Hematology Clinic of the University of Münster in Germany as a Visiting Professor through the DAAD foundation.</p>
+        <p class="lang-en">He serves as <strong>President of the Pediatric Society of Northern Greece</strong> and Vice-President of the Pediatric Hematology committee of the Hellenic Hematology Society, and has received multiple awards including the "Choremeio" and "Kasimos" prizes.</p>
+
+        <div class="about-highlights">
+          <div class="about-hl">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div><div class="t lang-el">Άριστα ΑΠΘ</div><div class="t lang-en">AUTH Honours</div><div class="d lang-el">Διδακτορικό 2006</div><div class="d lang-en">PhD 2006</div></div>
+          </div>
+          <div class="about-hl">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 21l3-3 3 3"/><path d="M9 18v-4M15 18v-4"/></svg></div>
+            <div><div class="t lang-el">Βραβεία</div><div class="t lang-en">Awards</div><div class="d lang-el">Χωρέμειο & Κασίμος</div><div class="d lang-en">Choremeio & Kasimos</div></div>
+          </div>
+          <div class="about-hl">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div><div class="t lang-el">Münster</div><div class="t lang-en">Münster</div><div class="d lang-el">Επισκέπτης Καθηγητής</div><div class="d lang-en">Visiting Professor</div></div>
+          </div>
+          <div class="about-hl">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div><div class="t lang-el">Πρόεδρος</div><div class="t lang-en">President</div><div class="d lang-el">Παιδ. Εταιρεία Β. Ελλάδος</div><div class="d lang-en">Ped. Society N. Greece</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services sec-pad" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag lang-el">Υπηρεσίες</span>
+      <span class="sec-tag lang-en">Services</span>
+      <h2 class="sec-title lang-el">Ολοκληρωμένη <em>παιδιατρική</em> φροντίδα</h2>
+      <h2 class="sec-title lang-en">Comprehensive <em>pediatric</em> care</h2>
+      <p class="sec-sub lang-el">Εξειδικευμένη διάγνωση, θεραπεία και παρακολούθηση σε όλο το φάσμα των αιματολογικών και ογκολογικών νοσημάτων της παιδικής ηλικίας.</p>
+      <p class="sec-sub lang-en">Specialized diagnosis, treatment and monitoring across the full spectrum of childhood hematological and oncological conditions.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2C8 6 6 9 6 13a6 6 0 0012 0c0-4-2-7-6-11z"/></svg></div>
+        <h3 class="lang-el">Καλοήθη Αιματολογικά Νοσήματα</h3>
+        <h3 class="lang-en">Benign Hematological Conditions</h3>
+        <ul class="svc-list">
+          <li class="lang-el">Διάγνωση και θεραπευτική παρέμβαση σε καλοήθη αιματολογικά νοσήματα παίδων.</li>
+          <li class="lang-el">Διαχείριση αναιμιών, θρομβοπενιών και ουδετεροπενιών.</li>
+          <li class="lang-el">Διερεύνηση σπληνομεγαλίας και λεμφαδενοπάθειας.</li>
+          <li class="lang-en">Diagnosis and treatment of benign pediatric hematological disorders.</li>
+          <li class="lang-en">Management of anemias, thrombocytopenias and neutropenias.</li>
+          <li class="lang-en">Investigation of splenomegaly and lymphadenopathy.</li>
+        </ul>
+      </div>
+
+      <div class="svc-card reveal d1">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div>
+        <h3 class="lang-el">Παιδιατρική Ογκολογία & Κακοήθειες</h3>
+        <h3 class="lang-en">Pediatric Oncology & Malignancies</h3>
+        <ul class="svc-list">
+          <li class="lang-el">Ολοκληρωμένη φροντίδα για παιδιά με λευχαιμίες και λεμφώματα.</li>
+          <li class="lang-el">Αντιμετώπιση και κλινική διαχείριση συμπαγών όγκων.</li>
+          <li class="lang-el">Εξατομικευμένος σχεδιασμός θεραπευτικών πρωτοκόλλων.</li>
+          <li class="lang-en">Comprehensive care for children with leukemias and lymphomas.</li>
+          <li class="lang-en">Treatment and clinical management of solid tumors.</li>
+          <li class="lang-en">Personalized design of therapeutic protocols.</li>
+        </ul>
+      </div>
+
+      <div class="svc-card reveal d2">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3 class="lang-el">Παρακολούθηση & Ανοσοποίηση</h3>
+        <h3 class="lang-en">Follow-up & Immunization</h3>
+        <ul class="svc-list">
+          <li class="lang-el">Στενή παρακολούθηση μετά την ολοκλήρωση χημειοθεραπείας.</li>
+          <li class="lang-el">Υποστήριξη παιδιών μετά από μεταμόσχευση μυελού των οστών.</li>
+          <li class="lang-el">Ασφαλής σχεδιασμός εμβολιασμών μετά θεραπεία & μεταμόσχευση.</li>
+          <li class="lang-en">Close monitoring after completion of chemotherapy.</li>
+          <li class="lang-en">Support for children after bone marrow transplantation.</li>
+          <li class="lang-en">Safe immunization planning after therapy & transplantation.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philo sec-pad" id="philosophy">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag lang-el">Η Φιλοσοφία μου</span>
+      <span class="sec-tag lang-en">My Philosophy</span>
+      <h2 class="sec-title lang-el">Στην αιχμή της <em>επιστήμης</em></h2>
+      <h2 class="sec-title lang-en">At the cutting edge of <em>science</em></h2>
+    </div>
+    <p class="philo-intro reveal d1 lang-el">Στον ευαίσθητο και απαιτητικό τομέα της Παιδιατρικής Αιματολογίας-Ογκολογίας, η βαθιά κλινική εμπειρία οφείλει να συμβαδίζει με τη συνεχή ερευνητική εξέλιξη. Οι μικροί μας ασθενείς αξίζουν πρόσβαση στις πιο σύγχρονες, ασφαλείς και τεκμηριωμένες ιατρικές πρακτικές παγκοσμίως.</p>
+    <p class="philo-intro reveal d1 lang-en">In the sensitive and demanding field of Pediatric Hematology-Oncology, deep clinical experience must go hand in hand with continuous research advancement. Our young patients deserve access to the most modern, safe and evidence-based medical practices worldwide.</p>
+
+    <div class="philo-grid">
+      <div class="philo-card reveal">
+        <div class="philo-num">01</div>
+        <h3 class="lang-el">Διεθνής Τεχνογνωσία</h3>
+        <h3 class="lang-en">International Expertise</h3>
+        <p class="lang-el">Η μετεκπαίδευσή μου σε κορυφαία κέντρα του εξωτερικού, όπως το Πανεπιστήμιο του Münster, και η συμμετοχή μου σε διεθνή ερευνητικά πρωτόκολλα μου επιτρέπουν να ενσωματώνω άμεσα τις παγκόσμιες εξελίξεις στην καθημερινή κλινική πράξη.</p>
+        <p class="lang-en">My training at leading international centers, such as the University of Münster, and my participation in international research protocols allow me to directly integrate global developments into daily clinical practice.</p>
+      </div>
+      <div class="philo-card reveal d1">
+        <div class="philo-num">02</div>
+        <h3 class="lang-el">Πολυδιάστατη Υποστήριξη</h3>
+        <h3 class="lang-en">Multidimensional Support</h3>
+        <p class="lang-el">Η θεραπεία ενός παιδιού δεν τελειώνει με την ύφεση της νόσου. Απαιτείται προσεκτική στρατηγική αποκατάστασης — σωστή ανοσοποίηση και συστηματική παρακολούθηση μετά θεραπείες ή μεταμοσχεύσεις — που διασφαλίζει τη μακροπρόθεσμη ποιότητα ζωής.</p>
+        <p class="lang-en">A child's treatment does not end with disease remission. A careful recovery strategy is required — proper immunization and systematic monitoring after treatments or transplants — ensuring long-term quality of life.</p>
+      </div>
+      <div class="philo-card reveal d2">
+        <div class="philo-num">03</div>
+        <h3 class="lang-el">Ανθρώπινο Πρόσωπο</h3>
+        <h3 class="lang-en">A Human Face</h3>
+        <p class="lang-el">Πίσω από τις 400+ επιστημονικές εργασίες και τη συμμετοχή σε 14+ εταιρείες, βρίσκεται πάντα ο ίδιος στόχος: η παροχή αμέριστης επιστημονικής και ανθρώπινης υποστήριξης σε κάθε παιδί και κάθε οικογένεια, με σεβασμό και ενσυναίσθηση.</p>
+        <p class="lang-en">Behind 400+ scientific papers and membership in 14+ societies lies always the same goal: providing wholehearted scientific and human support to every child and every family, with respect and empathy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TALKS -->
+<section class="talks sec-pad">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag lang-el">Επιστημονική Δράση</span>
+      <span class="sec-tag lang-en">Scientific Activity</span>
+      <h2 class="sec-title lang-el">Διδασκαλία & <em>ομιλίες</em></h2>
+      <h2 class="sec-title lang-en">Teaching & <em>lectures</em></h2>
+      <p class="sec-sub lang-el">Ενεργή συμμετοχή σε συνέδρια, σεμινάρια και εκπαιδευτικές δράσεις, μεταδίδοντας τη γνώση στην επόμενη γενιά ιατρών.</p>
+      <p class="sec-sub lang-en">Active participation in conferences, seminars and educational events, passing on knowledge to the next generation of physicians.</p>
+    </div>
+    <div class="talks-grid">
+      <div class="talk-img reveal zoomable-wrap"><img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-170.jpg" alt="Ομιλία" class="zoomable"><div class="talk-cap lang-el">Επιστημονικό Συνέδριο</div><div class="talk-cap lang-en">Scientific Conference</div></div>
+      <div class="talk-img reveal d1 zoomable-wrap"><img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-185.jpg" alt="Σεμινάριο" class="zoomable"><div class="talk-cap lang-el">Εκπαιδευτικό Σεμινάριο</div><div class="talk-cap lang-en">Educational Seminar</div></div>
+      <div class="talk-img reveal d2 zoomable-wrap"><img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/unnamed-186.jpg" alt="Διάλεξη" class="zoomable"><div class="talk-cap lang-el">Πανεπιστημιακή Διάλεξη</div><div class="talk-cap lang-en">University Lecture</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE GALLERY -->
+<section class="space sec-pad">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag lang-el">Ο Χώρος</span>
+      <span class="sec-tag lang-en">The Space</span>
+      <h2 class="sec-title lang-el">Ένα <em>ασφαλές</em> περιβάλλον φροντίδας</h2>
+      <h2 class="sec-title lang-en">A <em>safe</em> environment of care</h2>
+      <p class="sec-sub lang-el">Σύγχρονοι, φιλόξενοι χώροι σχεδιασμένοι για την άνεση και την ασφάλεια των μικρών μας ασθενών.</p>
+      <p class="sec-sub lang-en">Modern, welcoming spaces designed for the comfort and safety of our young patients.</p>
+    </div>
+    <div class="gallery reveal" id="gallery"></div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="articles sec-pad" id="articles">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag lang-el">Επιστημονικά Άρθρα</span>
+      <span class="sec-tag lang-en">Scientific Articles</span>
+      <h2 class="sec-title lang-el">Γνώση & <em>έρευνα</em></h2>
+      <h2 class="sec-title lang-en">Knowledge & <em>research</em></h2>
+      <p class="sec-sub lang-el">Επιλεγμένο εκπαιδευτικό υλικό και κατευθυντήριες οδηγίες για τους εμβολιασμούς παιδιών και εφήβων με κακοήθη νοσήματα.</p>
+      <p class="sec-sub lang-en">Selected educational material and guidelines on vaccinations of children and adolescents with malignant diseases.</p>
+    </div>
+    <div class="art-grid" id="artGrid"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews sec-pad" id="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag lang-el">Μαρτυρίες</span>
+      <span class="sec-tag lang-en">Testimonials</span>
+      <h2 class="sec-title lang-el">Η εμπιστοσύνη των <em>οικογενειών</em></h2>
+      <h2 class="sec-title lang-en">The trust of <em>families</em></h2>
+      <div class="rev-stars-big" style="justify-content:center;margin-top:16px">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.4 21.2 6.7 14.2 1.7 9.4l7-.9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.4 21.2 6.7 14.2 1.7 9.4l7-.9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.4 21.2 6.7 14.2 1.7 9.4l7-.9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.4 21.2 6.7 14.2 1.7 9.4l7-.9z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.4 21.2 6.7 14.2 1.7 9.4l7-.9z"/></svg>
+      </div>
+      <a href="https://www.google.com/search?client=safari&hs=pxp&sa=X&sca_esv=eaca09e5d8679415&rls=en&q=%CE%91%CE%B8%CE%B1%CE%BD%CE%B1%CF%83%CE%B9%CE%BF%CF%82+%CE%A4%CF%81%CE%B1%CE%B3%CE%B9%CE%B1%CE%BD%CE%BD%CE%B9%CE%B4%CE%B7%CF%82+Reviews&rldimm=9319412772137949472&tbm=lcl" target="_blank" rel="noopener" class="rev-google">
+        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.6-2.2 3.4v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.2z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.6-2.8c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.1-1.9-6-4.4H2.3v2.9C4.1 20.6 7.8 23 12 23z"/><path fill="#FBBC05" d="M6 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V6.8H2.3C1.5 8.4 1 10.1 1 12s.5 3.6 1.3 5.2L6 14.3z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .5 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.8 1 4.1 3.4 2.3 6.8L6 9.7c.9-2.5 3.2-4.3 6-4.3z"/></svg>
+        <span class="lang-el">Αξιολογήσεις στο Google</span><span class="lang-en">Google Reviews</span>
+      </a>
+    </div>
+
+    <div class="rev-masonry reveal" id="revMasonry"></div>
+
+    <div class="rev-more">
+      <a href="https://www.google.com/search?client=safari&hs=pxp&sa=X&sca_esv=eaca09e5d8679415&rls=en&q=%CE%91%CE%B8%CE%B1%CE%BD%CE%B1%CF%83%CE%B9%CE%BF%CF%82+%CE%A4%CF%81%CE%B1%CE%B3%CE%B9%CE%B1%CE%BD%CE%BD%CE%B9%CE%B4%CE%B7%CF%82+Reviews&rldimm=9319412772137949472&tbm=lcl" target="_blank" rel="noopener" class="btn btn-gold" style="display:inline-flex">
+        <span class="lang-el">Δείτε όλες τις κριτικές</span><span class="lang-en">Read all reviews</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact sec-pad" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-text reveal-l">
+        <span class="sec-tag lang-el">Επικοινωνία</span>
+        <span class="sec-tag lang-en">Contact</span>
+        <h2 class="lang-el">Είμαστε <em>εδώ</em> για το παιδί σας</h2>
+        <h2 class="lang-en">We are <em>here</em> for your child</h2>
+        <p class="contact-lead lang-el">Για ραντεβού, ιατρική καθοδήγηση ή δεύτερη γνώμη, επικοινωνήστε μαζί μας. Προσεγγίζουμε κάθε περιστατικό με επιστημονική αυστηρότητα και ανθρώπινη ζεστασιά.</p>
+        <p class="contact-lead lang-en">For appointments, medical guidance or a second opinion, please get in touch. We approach every case with scientific rigor and human warmth.</p>
+
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="lbl lang-el">Διεύθυνση</div><div class="lbl lang-en">Address</div>
+              <div class="val lang-el">Π.Γ.Ν. ΑΧΕΠΑ — Β' Παιδιατρική Κλινική<br>Σ. Κυριακίδη 1, 546 36, Θεσσαλονίκη</div>
+              <div class="val lang-en">AHEPA University Hospital — 2nd Pediatric Clinic<br>S. Kyriakidi 1, 546 36, Thessaloniki</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
+            <div>
+              <div class="lbl lang-el">Τηλέφωνο</div><div class="lbl lang-en">Phone</div>
+              <a href="tel:+302310994804" class="val">+30 2310 994804</a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+            <div>
+              <div class="lbl lang-el">Email</div><div class="lbl lang-en">Email</div>
+              <a href="mailto:atragian@auth.gr" class="val">atragian@auth.gr</a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div>
+              <div class="lbl lang-el">Ακαδημαϊκή Θέση</div><div class="lbl lang-en">Academic Position</div>
+              <div class="val lang-el">Καθηγητής Παιδ. Αιματολογίας-Ογκολογίας, Ιατρική Σχολή ΑΠΘ · Διευθυντής ΠΜΣ Εφαρμοσμένης Διατροφής</div>
+              <div class="val lang-en">Professor of Pediatric Hematology-Oncology, AUTH Medical School · Director of MSc in Applied Nutrition</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-map reveal-r">
+        <iframe src="https://www.google.com/maps?q=AHEPA+University+Hospital+Thessaloniki+S.+Kyriakidi+1&output=embed" loading="lazy" title="Map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/Gemini_Generated_Image_96qcwx96qcwx96qc-2.png" alt="Logo">
+          <div>
+            <div class="n lang-el">Καθ. Α. Τραγιαννίδης</div>
+            <div class="n lang-en">Prof. A. Tragiannidis</div>
+            <div class="s lang-el">MD · PhD · FECMM</div>
+            <div class="s lang-en">MD · PhD · FECMM</div>
+          </div>
+        </div>
+        <p class="foot-desc lang-el">Καθηγητής Παιδιατρικής Αιματολογίας-Ογκολογίας ΑΠΘ. Αφοσιωμένος στη διάγνωση, θεραπεία και παρακολούθηση παιδιών και εφήβων με αιματολογικά και ογκολογικά νοσήματα, με επιστημονική αριστεία και ανθρωπιά.</p>
+        <p class="foot-desc lang-en">Professor of Pediatric Hematology-Oncology at AUTH. Devoted to the diagnosis, treatment and monitoring of children and adolescents with hematological and oncological diseases, with scientific excellence and humanity.</p>
+      </div>
+      <div class="foot-col">
+        <h4 class="lang-el">Πλοήγηση</h4><h4 class="lang-en">Navigation</h4>
+        <ul>
+          <li><a href="#about"><span class="lang-el">Προφίλ</span><span class="lang-en">About</span></a></li>
+          <li><a href="#services"><span class="lang-el">Υπηρεσίες</span><span class="lang-en">Services</span></a></li>
+          <li><a href="#philosophy"><span class="lang-el">Φιλοσοφία</span><span class="lang-en">Philosophy</span></a></li>
+          <li><a href="#articles"><span class="lang-el">Άρθρα</span><span class="lang-en">Articles</span></a></li>
+          <li><a href="#reviews"><span class="lang-el">Κριτικές</span><span class="lang-en">Reviews</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="lang-el">Επικοινωνία</h4><h4 class="lang-en">Contact</h4>
+        <ul>
+          <li><a href="tel:+302310994804">+30 2310 994804</a></li>
+          <li><a href="mailto:atragian@auth.gr">atragian@auth.gr</a></li>
+          <li class="lang-el">Σ. Κυριακίδη 1, Θεσσαλονίκη</li>
+          <li class="lang-en">S. Kyriakidi 1, Thessaloniki</li>
+          <li class="lang-el">Π.Γ.Ν. ΑΧΕΠΑ</li>
+          <li class="lang-en">AHEPA University Hospital</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="year"></span> <span class="lang-el">Καθηγητής Αθανάσιος Τραγιαννίδης. Με επιφύλαξη παντός δικαιώματος.</span><span class="lang-en">Prof. Athanasios Tragiannidis. All rights reserved.</span></div>
+      <div class="advon lang-el">Σχεδιασμός &amp; ανάπτυξη από <a href="https://www.advonmedia.com" target="_blank" rel="noopener">Advon Media</a></div>
+      <div class="advon lang-en">Designed &amp; developed by <a href="https://www.advonmedia.com" target="_blank" rel="noopener">Advon Media</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CALL -->
+<a href="tel:+302310994804" class="float-call" id="floatCall">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+  <span class="lang-el">Κλήση</span><span class="lang-en">Call</span>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-close" id="lbClose"></div>
+  <div class="lb-nav lb-prev" id="lbPrev"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></div>
+  <img src="" alt="" id="lbImg">
+  <div class="lb-nav lb-next" id="lbNext"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>
+</div>
+
+<script>
+/* ===== Data ===== */
+const credentials = {
+  el:["Τακτικός Καθηγητής ΑΠΘ","FECMM","Διδακτορικό με Άριστα","Πρόεδρος Παιδ. Εταιρείας Β. Ελλάδος","140+ Δημοσιεύσεις PubMed","Βραβείο Χωρέμειο","Μετεκπαίδευση Münster","Βραβείο Κασίμος","400+ Επιστημονικές Εργασίες"],
+  en:["Full Professor AUTH","FECMM","PhD with Honours","President Ped. Society N. Greece","140+ PubMed Publications","Choremeio Award","Münster Training","Kasimos Award","400+ Scientific Papers"]
+};
+
+const spaceImgs = [
+  {src:"unnamed-184.jpg",cls:"big"},
+  {src:"unnamed-172.jpg",cls:""},
+  {src:"unnamed-171.jpg",cls:""},
+  {src:"unnamed-183.jpg",cls:"tall"},
+  {src:"unnamed-173.jpg",cls:""},
+  {src:"unnamed-174.jpg",cls:""},
+  {src:"unnamed-175.jpg",cls:"wide"},
+  {src:"unnamed-176.jpg",cls:""},
+  {src:"unnamed-177.jpg",cls:""},
+  {src:"unnamed-182.jpg",cls:"tall"},
+  {src:"unnamed-178.jpg",cls:""},
+  {src:"unnamed-179.jpg",cls:""}
+];
+const BASE="https://raw.githubusercontent.com/agelmet/TRAGIANNIDIS/dce2a48db136faf7cfcec2c56a739cfcf5626d8a/";
+
+const articles = [
+  {cat:{el:"Κλινικές Οδηγίες",en:"Clinical Guidelines"},title:{el:"Εμβολιασμοί παιδιών & εφήβων με κακοήθη νοσήματα",en:"Vaccinations of children & adolescents with malignant diseases"},desc:{el:"Ολοκληρωμένος οδηγός — Ελληνική Εταιρεία Παιδιατρικής Αιματολογίας-Ογκολογίας (ΕΕΠΑΟ).",en:"Comprehensive guide — Hellenic Society of Pediatric Hematology-Oncology (HSPHO)."},ext:"PDF",file:"trag4.pdf"},
+  {cat:{el:"Παρουσίαση",en:"Presentation"},title:{el:"Εμβολιασμός κατά & μετά τη χημειοθεραπεία",en:"Vaccination during & after chemotherapy"},desc:{el:"Γενικές αρχές και πρωτόκολλα ανοσοποίησης σε ανοσοκατασταλμένους ασθενείς.",en:"General principles and immunization protocols in immunocompromised patients."},ext:"PPT",file:"trag1.ppt"},
+  {cat:{el:"Παρουσίαση",en:"Presentation"},title:{el:"Επανεμβολιασμός μετά από χημειοθεραπεία",en:"Re-vaccination after chemotherapy"},desc:{el:"Προγράμματα και χρονισμός εμβολιασμού σε παιδιά που δεν υποβλήθηκαν σε ΜΜΟ.",en:"Schedules and timing of vaccination in children without bone marrow transplant."},ext:"PPTX",file:"trag2.pptx"},
+  {cat:{el:"Παρουσίαση",en:"Presentation"},title:{el:"Εμβολιασμός μετά από Μεταμόσχευση Αιμοποιητικών Κυττάρων",en:"Vaccination after Hematopoietic Cell Transplantation"},desc:{el:"Ειδικές συστάσεις και έλεγχος αντισωμάτων μετά τη μεταμόσχευση (ΜΑΚ).",en:"Special recommendations and antibody monitoring after transplantation (HCT)."},ext:"PPT",file:"trag3.ppt"}
+];
+
+const reviews = [
+  {name:"Anna Ve",text:{el:"Εξαιρετικός γιατρός και σπουδαίος άνθρωπος. Στάθηκε δίπλα μας στις πιο δύσκολες στιγμές με επαγγελματισμό, ανθρωπιά και πραγματικό ενδιαφέρον. Μας ενέπνευσε εμπιστοσύνη και έκανε το παιδί μας να νιώθει ασφάλεια. Τον συστήνουμε ανεπιφύλακτα.",en:"An excellent doctor and a great human being. He stood by us in the most difficult moments with professionalism, humanity and genuine care. He inspired trust and made our child feel safe. We recommend him wholeheartedly."}},
+  {name:"Tonia Papageorgiou",text:{el:"Εξαιρετικός γιατρός! Εξαιρετικός επιστήμονας! Πάντα διαθέσιμος στο τηλέφωνο και με πολύ μεγάλη εμπειρία. Τον εμπιστευόμαστε με κλειστά τα μάτια.",en:"Excellent doctor! Excellent scientist! Always available by phone and very experienced. We trust him with our eyes closed."}},
+  {name:"Chiaro Scuro",text:{el:"Ο καλύτερος παιδίατρος της Θεσσαλονίκης τολμώ και το λέω. Είναι πάνω από όλα υπέροχος άνθρωπος και έτσι προσεγγίζει το κάθε περιστατικό με την πιο σωστή λύση και με αγάπη προς τα παιδιά. Τα πέντε αστέρια είναι λίγα.",en:"The best pediatrician in Thessaloniki, I dare to say it. Above all he is a wonderful person, and so he approaches every case with the right solution and with love for children. Five stars are too few."}},
+  {name:"Thomai Daldou",text:{el:"Εξαιρετικός γιατρός με πάρα πολλές γνώσεις. Όταν είχαμε πάει τον γιο μου έκανε εξαιρετική διάγνωση σε μία πάθηση που είχε.",en:"An excellent doctor with vast knowledge. When we brought our son, he made an outstanding diagnosis of a condition he had."}},
+  {name:"Χρήστος Χρόνης",text:{el:"Εξαιρετικός! Πλήρως καταρτισμένος! Συνεπής, ευγενικός και φιλικός με τα παιδιά! Κέρδισε τον γιο μου από την πρώτη επαφή. Τον βρήκαμε όποτε χρειάστηκε κάτι το παιδί μας.",en:"Excellent! Fully trained! Consistent, kind and friendly with children! He won over my son from the first contact. He was there whenever our child needed something."}},
+  {name:"Ελίζα Ραλ",text:{el:"Εξαιρετικός παιδίατρος με γνώσεις και μεγάλη εμπειρία! Πάντα διαθέσιμος στις κλήσεις και τα μηνύματά μου!",en:"An excellent pediatrician with knowledge and great experience! Always available for my calls and messages!"}},
+  {name:"Jo V.",text:{el:"Καταρτισμένος επιστήμονας με ουσιαστική εμπειρία, χωρίς έπαρση, τουναντίον με ανθρώπινη προσέγγιση εξετάζει τους ασθενείς και καθοδηγεί τους γονείς. Οι διαγνώσεις του είναι πάντα ορθές. Τον χαρακτηρίζει η υπευθυνότητα, η ευθύτητα και η αντίληψη.",en:"A well-trained scientist with substantial experience, without arrogance; on the contrary, he examines patients and guides parents with a human approach. His diagnoses are always correct. He is defined by responsibility, directness and insight."}},
+  {name:"Βίβη Βαμβουρέλλη",text:{el:"Εξαιρετικός! Πλήρως καταρτισμένος και ενημερωμένος! Συνεπής, ευγενικός και φιλικός με τα παιδιά! Με διάθεση να απαντήσει στις διάφορες ερωτήσεις των γονέων! Ανταποκρίνεται άμεσα σε κάθε κλήση!",en:"Excellent! Fully trained and up to date! Consistent, kind and friendly with children! Willing to answer parents' various questions! Responds immediately to every call!"}},
+  {name:"Penelope Zygogianni",text:{el:"Εξαιρετικός και πλήρως καταρτισμένος επιστήμονας, τόσο στο παιδιατρικό κομμάτι όσο και στο ογκολογικό. Ανθρώπινη προσέγγιση, με εξατομικευμένο ενδιαφέρον για κάθε ασθενή, εύστοχος πάντα στις διαγνώσεις του. Η απόλυτη εμπιστοσύνη!",en:"An excellent and fully trained scientist, both in pediatrics and oncology. A human approach, with personalized interest in each patient, always accurate in his diagnoses. Absolute trust!"}},
+  {name:"Ελένη Τιταρου",text:{el:"Πολύ καλός παιδίατρος με υπομονή να σου εξηγήσει όλα αναλυτικά, πολύ προσεκτικός.",en:"A very good pediatrician with the patience to explain everything in detail, very thorough."}},
+  {name:"Iraklis Nikolaidis",text:{el:"Εξαιρετικός επιστήμονας, με την κατάλληλη προσέγγιση στο παιδί.",en:"An excellent scientist, with the right approach to the child."}},
+  {name:"Litsa Savvidou",text:{el:"Μόνο τα καλύτερα έχω να πω για τον κύριο Τραγιαννίδη... και σαν επιστήμονας και σαν άνθρωπος είναι φανταστικός...",en:"I only have the best to say about Mr. Tragiannidis... both as a scientist and as a person he is fantastic..."}}
+];
+
+/* ===== Build dynamic content ===== */
+// Credentials marquee (doubled for seamless loop)
+function buildCred(){
+  const lang=document.body.classList.contains('en')?'en':'el';
+  const items=credentials[lang];
+  const track=document.getElementById('credTrack');
+  const html=[...items,...items].map(t=>`<div class="cred-item"><span class="star">✦</span>${t}</div>`).join('');
+  track.innerHTML=html;
+}
+
+// Gallery
+const gallery=document.getElementById('gallery');
+spaceImgs.forEach(o=>{
+  const d=document.createElement('div');
+  d.className='gal-item '+o.cls;
+  d.innerHTML=`<img src="${BASE+o.src}" alt="Χώρος κλινικής" class="zoomable"><div class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div>`;
+  gallery.appendChild(d);
+});
+
+// Articles
+function buildArticles(){
+  const lang=document.body.classList.contains('en')?'en':'el';
+  const grid=document.getElementById('artGrid');
+  grid.innerHTML=articles.map((a,i)=>`
+    <div class="art-card reveal ${i%2?'d1':''}">
+      <a href="${BASE+a.file}" target="_blank" rel="noopener" class="art-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/></svg>
+        <span class="ext">${a.ext}</span>
+      </a>
+      <div class="art-body">
+        <div class="cat">${a.cat[lang]}</div>
+        <h3>${a.title[lang]}</h3>
+        <p>${a.desc[lang]}</p>
+        <a href="${BASE+a.file}" target="_blank" rel="noopener" class="art-link">
+          ${lang==='el'?'Λήψη / Προβολή':'Download / View'}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+      </div>
+    </div>`).join('');
+  observeReveals();
+}
+
+// Reviews
+function buildReviews(){
+  const lang=document.body.classList.contains('en')?'en':'el';
+  const m=document.getElementById('revMasonry');
+  m.innerHTML=reviews.map(r=>{
+    const initial=r.name.trim().charAt(0).toUpperCase();
+    return `<div class="rev-card">
+      <div class="rev-quote">”</div>
+      <div class="rev-stars">${'<svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.4 21.2 6.7 14.2 1.7 9.4l7-.9z"/></svg>'.repeat(5)}</div>
+      <p class="rev-text">${r.text[lang]}</p>
+      <div class="rev-author">
+        <div class="rev-avatar">${initial}</div>
+        <div><div class="rev-name">${r.name}</div><div class="rev-role">${lang==='el'?'Επαληθευμένη κριτική Google':'Verified Google review'}</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ===== Loader ===== */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('done'),700);
+});
+
+/* ===== Language switch ===== */
+function setLang(lang){
+  document.body.classList.toggle('en',lang==='en');
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  document.querySelectorAll('.m-lang').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  buildCred();buildArticles();buildReviews();
+}
+document.querySelectorAll('.lang-btn,.m-lang').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+/* ===== Header scroll ===== */
+const header=document.getElementById('header');
+const hero=document.querySelector('.hero');
+window.addEventListener('scroll',()=>{
+  const sc=window.scrollY>40;
+  header.classList.toggle('scrolled',sc);
+  document.getElementById('floatCall').classList.toggle('show',window.scrollY>600);
+});
+
+/* ===== Mobile menu ===== */
+const burger=document.getElementById('burger');
+const mobileMenu=document.getElementById('mobileMenu');
+const mobileClose=document.getElementById('mobileClose');
+function openMenu(){mobileMenu.classList.add('open');document.body.classList.add('no-scroll')}
+function closeMenu(){mobileMenu.classList.remove('open');document.body.classList.remove('no-scroll')}
+burger.addEventListener('click',openMenu);
+mobileClose.addEventListener('click',closeMenu);
+document.querySelectorAll('.m-link').forEach(a=>a.addEventListener('click',closeMenu));
+
+/* ===== Reveal on scroll ===== */
+let io;
+function observeReveals(){
+  const els=document.querySelectorAll('.reveal,.reveal-l,.reveal-r');
+  if(!io){
+    io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
+  }
+  els.forEach(el=>{if(!el.classList.contains('in'))io.observe(el)});
+}
+
+/* ===== Lightbox ===== */
+const lightbox=document.getElementById('lightbox');
+const lbImg=document.getElementById('lbImg');
+let lbList=[],lbIndex=0;
+function gatherImgs(){lbList=Array.from(document.querySelectorAll('.zoomable')).map(i=>i.src)}
+function openLb(src){
+  gatherImgs();
+  lbIndex=lbList.indexOf(src);
+  if(lbIndex<0)lbIndex=0;
+  lbImg.src=src;
+  lightbox.classList.add('open');
+  document.body.classList.add('no-scroll');
+}
+function closeLb(){lightbox.classList.remove('open');document.body.classList.remove('no-scroll')}
+function navLb(dir){lbIndex=(lbIndex+dir+lbList.length)%lbList.length;lbImg.src=lbList[lbIndex]}
+document.addEventListener('click',e=>{
+  const z=e.target.closest('.zoomable');
+  if(z){openLb(z.src);return}
+});
+document.getElementById('lbClose').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();navLb(-1)});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();navLb(1)});
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLb()});
+document.addEventListener('keydown',e=>{
+  if(!lightbox.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')navLb(-1);
+  if(e.key==='ArrowRight')navLb(1);
+});
+
+/* ===== Parallax hero ===== */
+const heroBg=document.querySelector('.hero-bg img');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  if(y<window.innerHeight && heroBg){heroBg.style.transform=`translateY(${y*0.25}px) scale(1.1)`}
+});
+
+/* ===== Init ===== */
+document.getElementById('year').textContent=new Date().getFullYear();
+buildCred();buildArticles();buildReviews();
+setTimeout(observeReveals,100);
+</script>
+</body>
+</html>
