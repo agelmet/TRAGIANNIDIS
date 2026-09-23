@@ -1,3 +1,5 @@
-# Preview (draft) — keep out of search engines until launch
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /index.backup
+
+Sitemap: https://tragiannidis-pediatros-hematologos-oncologos.gr/sitemap.xml
